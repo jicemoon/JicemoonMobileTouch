@@ -124,6 +124,7 @@
             jmt.swipe(swipeHandle);
             jmt.touchMove(function (evt){
                 evt.preventDefault();
+                evt.stopPropagation();
             })
             function swipeHandle(evt){
                 if(!canSwipe)
@@ -140,6 +141,8 @@
                         changeImage(temp);
                         break;
                 }
+                evt.preventDefault();
+                evt.stopPropagation();
             }
             function changeImage(temp){
                 if(isCircle){
