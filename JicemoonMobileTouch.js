@@ -3,10 +3,10 @@
  */
 /****
  * ==========事件监听============
- * handles:{click: null, swipe: null, touchStart: null, touchMove: null, touchEnd: null}
+ * handles:{tap: null, swipe: null, touchStart: null, touchMove: null, touchEnd: null}
  * setEventHandle:设置所有事件的监听函数为同一个;
  *=============事件监听参数属性===============
- * type:"touchStart"/"touchMove"/"touchEnd"/"click"/"swipe";
+ * type:"touchStart"/"touchMove"/"touchEnd"/"tap"/"swipe";
  * pageX/pageY: 事件发生相对于页面的x、y坐标;
  * screenX/screenY: 事件发生相对于屏幕的x、y坐标;
  * moveTotalPageX/moveTotalPageY: 在touchEnd和touchMove中，相对于touchStart事件发生点，页面上移动的距离;
@@ -30,6 +30,7 @@ function JicemoonMobileTouch(element, handles) {
     }
     var $this = this;
     var isHasBindEvents;
+    this.swipeTime = 200;
     this.tap = function (handle){
         if(!isHasBindEvents)
             bindEvent();
@@ -100,7 +101,6 @@ function JicemoonMobileTouch(element, handles) {
             removeEvent();
     }
     var tempInfos = {};
-    tempInfos.swipeTime = 200;
     tempInfos.mouseDown = false;
     function stopPropagation() {
         if (tempInfos.evt) {
@@ -190,6 +190,7 @@ function JicemoonMobileTouch(element, handles) {
                     handles.touchStart(pro);
                 break;
             case "mousemove":
+                pro.time = (new Date()).getTime() - tempInfos.startTime;
                 if (tempInfos.mouseDown) {
                     pro.type = "touchMove";
                     pro.pageX = evt.clientX;
@@ -246,7 +247,7 @@ function JicemoonMobileTouch(element, handles) {
                     pro.direction = "right";
                 }
             }
-            if (pro.time < tempInfos.swipeTime && handles.swipe) {
+            if (pro.time < $this.swipeTime && handles.swipe) {
                 pro.type = "swipe";
                 handles.swipe(pro);
             }
