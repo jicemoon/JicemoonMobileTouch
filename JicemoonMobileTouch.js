@@ -325,8 +325,8 @@ function JicemoonMobileTouch(element, handles) {
     }
 }
 
-(function ($) {
-    if ($) {
+if(window["jQuery"]){
+    (function ($) {
         $.prototype.addTouchEvent = function (types, handle) {
             var typeArr = types.split(" ");
             var handles = {};
@@ -352,5 +352,5 @@ function JicemoonMobileTouch(element, handles) {
                 (new JicemoonMobileTouch($(this)[0])).allEvents(handle);
             });
         };
-    }
-})(jQuery);
+    })(jQuery);
+}
