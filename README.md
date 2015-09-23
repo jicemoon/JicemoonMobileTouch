@@ -1,7 +1,7 @@
 # JicemoonMobileTouch
 
 JicemoonMobileTouch<br />
-&nbsp;&nbsp;是一个简单的JS Mobile Touch的兼容库(兼容ios/android/wp), 目前暂不支持多指事件<br />
+&nbsp;&nbsp;&nbsp;&nbsp;是一个简单的JS Mobile Touch的兼容库(兼容ios/android/wp), 目前暂不支持多指事件<br />
 <br />
 <br />
 包括的事件如下<br />
