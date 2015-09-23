@@ -1,4 +1,5 @@
 # JicemoonMobileTouch
+
 MobileTouch
 一个简单的JS Mobile Touch的兼容库(兼容ios/android/wp)
 包括的事件如下
@@ -13,6 +14,7 @@ pageX/pageY: 事件发生的页面坐标
 screenX/screenY: 事件发生的屏幕坐标
 target: 触发事件的当前对象
 touch: 当前JicemoonMobileTouch对象的引用
+
 
 事件对象包含的方法:
 stopPropagation: 阻止冒泡

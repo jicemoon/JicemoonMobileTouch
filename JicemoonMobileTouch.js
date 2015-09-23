@@ -3,7 +3,7 @@
  */
 /****
  * ==========事件监听============
- * handles:{tap: null, swipe: null, touchStart: null, touchMove: null, touchEnd: null}
+ * handles: {tap: null, swipe: null, touchStart: null, touchMove: null, touchEnd: null}
  * setEventHandle:设置所有事件的监听函数为同一个;
  *=============事件监听参数属性===============
  * type:"touchStart"/"touchMove"/"touchEnd"/"tap"/"swipe";
