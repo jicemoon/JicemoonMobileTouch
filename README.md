@@ -1,6 +1,6 @@
 # JicemoonMobileTouch
 MobileTouch
-一个简单的JS Mobile Touch的兼容库(兼容ios/android/wp)
+一个简单的JS Mobile Touch的兼容库
 包括的事件如下
 tap: 轻触或点击
 touchStart: 手指或鼠标按下
